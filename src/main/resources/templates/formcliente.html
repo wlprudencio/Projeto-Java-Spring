@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{home :: head}"></head>
+
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
+<main class="w-75 m-auto">
+
+   <div th:replace="~{home :: menu}"></div>
+
+    <form th:object="${cliente}" action="/clientes" method="post" class="needs-validation">
+
+        <h2 class="h3 mb-3 fw-normal text-center">Novo Cliente</h2>
+
+        <div class="mb-2 row">
+            <label for="nome" class="col-1 col-form-label">Nome:</label>
+            <div class="col-8">
+                <input type="text" th:field="*{nome}" id="nome" class="form-control" placeholder="Digite seu nome:"
+                       required>
+            </div>
+        </div>
+
+        <div class="mb-2 row">
+            <label for="cpf" class="col-1 col-form-label">Cpf:</label>
+            <div class="col-8">
+                <input type="text" th:field="*{cpf}" id="cpf" class="form-control" placeholder="Digite seu cpf:"
+                       required>
+            </div>
+        </div>
+
+        <div class="mb-2 row">
+            <label for="email" class="col-1 col-form-label">Email:</label>
+            <div class="col-8">
+                <input type="text" th:field="*{email}" id="email" class="form-control" placeholder="Digite seu email:"
+                       required>
+            </div>
+        </div>
+
+        <div class="mb-2 row">
+            <label for="senha" class="col-1 col-form-label">Senha:</label>
+            <div class="col-8">
+                <input type="text" th:field="*{senha}" id="senha" class="form-control" placeholder="Digite sua senha:"
+                       required>
+            </div>
+        </div>
+
+        <div class="mb-2 row">
+            <label for="id_genero" class="col-1 col-form-label">Gênero:</label>
+            <div class="col-8">
+                <select th:field="*{id_genero}" id="id_genero" class="form-control" required>
+                    <option value="0">Selecione seu gênero</option>
+                    <option value="1">Masculino</option>
+                    <option value="2">Feminino</option>
+                    <option value="3">Outro</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="mb-2 row">
+            <div class="col-8 offset-4">
+                <button type="submit" class="btn btn-primary">Cadastra</button>
+            </div>
+        </div>
+
+    </form>
+</main>
+</body>
+</html>

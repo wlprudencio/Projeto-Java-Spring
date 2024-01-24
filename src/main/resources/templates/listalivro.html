@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Livro</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h3>Gerenciamento de livros</h3>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+        <tr>
+
+          <th>Titulo</th>
+          <th>Sinopse</th>
+          <th>AutorDoLivro</th>
+          <th>Editora</th>
+          <th>EstoqueDoLivro</th>
+          <th>ValorDoLivro</th>
+
+        </tr>
+        </thead>
+        <tbody th:each="livro : ${livros}">
+        <tr>
+
+          <td th:text="${livro.titulo}"></td>
+          <td th:text="${livro.sinopse}"></td>
+          <td th:text="${livro.autorDoLivro}"></td>
+          <td th:text="${livro.editora}"></td>
+          <td th:text="${livro.estoqueDeLivro}"></td>
+          <td th:text="${livro.valorDoLivro}"></td>
+
+          <td><a th:method ="get" th:href="@{/livros/{id}(id = ${livro.idlivro})}">Excluir</a>
+            <a th:method ="get" th:href="@{/livros/editar/{id}(id = ${livro.idlivro})}">Editar</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-4 text-center">
+      <a th:href="@{/livros/cadastro}"><button type="button" class="btn btn-primary">Cadastro de Livros</button></a>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>

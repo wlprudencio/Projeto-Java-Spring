@@ -1,0 +1,40 @@
+.menu ul{
+list-style: none;
+color: rgb(31, 31, 194);
+
+}
+.menu li{
+display: inline;
+
+}
+.navbar{
+background-color: rgb(150, 150, 76);
+height: 60px;
+display: felx;
+justify-content: space-between;
+align-items: center;
+position: absolute;
+width: 100%;
+top: 0;
+left: 0;
+z-index: 0;
+}
+
+.menu a{
+
+text-decoration: none;
+text-transform: uppercase;
+margin: 10px;
+color: rgb(8, 8, 8);
+font-size: 15px;
+}
+
+.menu li a:hover{
+border-bottom: solid 2px #14140a;
+cursor: pointer;
+}
+
+
+
+
+

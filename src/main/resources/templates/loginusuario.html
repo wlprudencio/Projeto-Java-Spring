@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Cor de fundo para a página */
+        }
+        .login-form {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            background-color: #fff; /* Cor de fundo para o formulário */
+        }
+        .login-form label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333; /* Cor para as labels */
+        }
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: calc(100% - 20px); /* Leva em conta o padding */
+            padding: 8px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box; /* Inclui padding e borda na largura */
+        }
+        .login-form input[type="submit"] {
+            width: 100%;
+            padding: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease; /* Adiciona transição suave */
+        }
+        .login-form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .message {
+            margin-top: 10px;
+            color: red;
+            font-style: italic;
+            border: 1px solid red; /* Adiciona borda vermelha */
+            padding: 8px;
+            border-radius: 5px;
+            background-color: #ffe0e0; /* Cor de fundo para a mensagem de erro */
+        }
+    </style>
+</head>
+<body>
+<div class="login-form">
+    <div th:if="${param.error}" class="message">
+        Senha ou username inválido!
+    </div>
+    <div th:if="${param.logout}" class="message">
+        Você está desconectado!
+    </div>
+    <form action="/login" method="post" th:object="${usuarioDto}">
+        <div>
+            <label>Email: <input th:fielt="*{email}" type="text" name="email"/></label>
+        </div>
+        <div>
+            <label>Senha: <input th:fielt="*{senha}" type="password" name="senha"></label>
+        </div>
+        <div>
+            <input type="submit" value="Login">
+        </div>
+    </form>
+</div>
+</body>
+</html>

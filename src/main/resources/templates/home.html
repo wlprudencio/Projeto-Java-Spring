@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livraria</title>
+
+    <link rel="stylesheet" th:href="@{/styles/menu.css}">
+
+    <link rel="stylesheet" href="FormCliente.html">
+
+</head>
+<body>
+
+<h1>Livraria_AwL</h1>
+<header>
+    <div class="navbar" th:fragment="menu" id="menu">
+        <nav class="menu">
+            <ul>
+                <li><a href="/clientes/cadastro"> | CADASTRO CLIENTE</a></li>
+
+                <li><a href="/livros"> | ENCONTRE SEU LIVRO </a></li>
+
+                <li><a href="/login"> | LOGIN </a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<!--Cont Principal-->
+<main class="main_principal">
+    <div class="img_principal">
+    </div>
+    <div class="texto_princiapl">
+    </div>
+</main>
+</body>
+</html>
